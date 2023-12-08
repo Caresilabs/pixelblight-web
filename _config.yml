@@ -100,9 +100,9 @@ navbar:
   style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
   expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
   brand:
-    title   :  # Title in navbar
-    url     :  # default["url/baseurl"]
-    img     :  # An small image, try 30x30px
+    title   : Pixel Blight # Title in navbar
+    url     : # default["url/baseurl"]
+    img     : "./assets/img/logo.png" # An small image, try 30x30px
   nav:
   - title   : # Label
     url     : # url
@@ -180,7 +180,7 @@ defaults:
       show_related      : true
       show_bottomnavs   : true
       show_sociallinks  : true
-      show_comments     : true
+      show_comments     : false
       show_tags         : true
       show_categories   : true
       show_author       : true

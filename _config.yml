@@ -8,7 +8,7 @@ repository: Caresilabs/pixelblight-web
 locale                  :     #default["en-US"] format language-TERRITORY , e.g fr, en-GB, es-MX, pt-BR
 title                   : Pixel Blight    #default["repository_name"]
 title_separator         :     #default [" | "]
-subtitle                :     #default [your-repository-tagline]
+subtitle                : Pixel Blight    #default [your-repository-tagline]
 description             : Pixel Blight    #default [your-repository-tagline]
 url                     : "https://pixelblight.com"
 baseurl                 : "/"     #On Github Pages you may leave it blank. Have a look to: https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/
@@ -100,7 +100,7 @@ navbar:
   style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
   expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
   brand:
-    title   : Pixel Blight # Title in navbar
+    title   : #Pixel Blight # Title in navbar
     url     : # default["url/baseurl"]
     img     : "./assets/img/logo.png" # An small image, try 30x30px
   nav:

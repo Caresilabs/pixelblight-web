@@ -1,1 +1,185 @@
 remote_theme: dieghernan/chulapa
+
+title: Pixel Blight
+description             : Pixel Blight
+
+og_image                :     #default[author.avatar (see below)] or [github-avatar]
+twitter_site            :     #Avoid @
+author:
+  name                  :  Pixel Blight   # Name Surname Company
+  avatar                :  # Try a square file. Info: Your github avatar on https://github.com/[USERNAME].png
+  location              :  "Sweden"   # New York, USA
+
+search:
+  provider              : lunr #Select a provider for enable search: lunr, algolia, google
+  label                 :  #default ["Search"] Text on navbar when search is enabled
+  landing_page          :  #default ["/search"] Link on navbar
+  lunr_maxwords         :  #default [30] lunr only - May slow down your site build
+  algolia_logo          :  true #Displays algolia logo. Should be set to true if you are on a community plan, otherwise false.
+
+
+
+navbar:
+  style     :  #default is the classical top navbar, set "fab" for a floating action button navbar or "dual"
+  expand    :  # At which device size expand the navbar menu. default[md] https://getbootstrap.com/docs/4.5/layout/overview/
+  brand:
+    title   :  Home # Title in navbar
+    url     :  # default["url/baseurl"]
+    img     :  # An small image, try 30x30px
+  nav:
+  - title   : Blog # Label
+    url     : /blog/ # url
+  - title   : Cheatsheets
+    url     : /cheatsheets
+  - title   : Extras
+    child   :
+      - title : Tags
+        url   : /tags
+      - title : Categories
+        url   : /categories
+      - title : Archive
+        url   : /archive
+      - title : Current skin
+        url   : /current-skin
+  - title   : Docs
+    url     : https://dieghernan.github.io/chulapa/docs/01-install
+  - title   : Use this template
+    url     : https://github.com/dieghernan/chulapa-101/generate
+#  - title   : # Label submenu
+#    child:
+#    - title: # Child label
+#      url  : # child url
+#    - title: # Child label
+#      url  : # child url
+#Social links to be placed on your site footer
+footer:
+  links:
+    - label : Repo on Github # Label
+      icon  : fab fa-github # Fontawesome 5 icon
+      url   : https://github.com/dieghernan/chulapa-101 # A link or email: https://twitter.com/jack, mail@example.com
+    - label: "RSS"
+      icon: "fa fa-rss"
+      url:  "./atom.xml"
+  copyright: # default is © <year> <name>
+
+# C. Theme Settings
+# Google Fonts https://fonts.google.com/, add as many as you need
+googlefonts:
+ # - url : # 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
+
+# Theme and colors
+chulapa-skin:
+  highlight     :  skeletor # default["default"]
+  skin         :  universal # Optional predefined skins
+  autothemer    :  true # Bool: Use autotheming
+  vars          :
+    primary     : #default ["#007bff"] - Bootstrap blue
+
+# D. Jekyll Defaults and collections: see https://jekyllrb.com/
+
+# Blog pagination: on this site /blog/index.html. https://jekyllrb.com/docs/pagination/
+paginate: 4
+paginate_path: "/blog/page:num/"
+paginator_maxnum: 3  #default[3] Custom: max of number to be displayed on the paginator
+
+# Collections https://jekyllrb.com/docs/step-by-step/09-collections/
+collections:
+  cheatsheet:
+    output: true
+    permalink: /cheatsheets/:name
+collections_dir     :
+permalink           : /:year:month:day_:title/
+
+
+# Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      header_type: "base"
+      include_on_search   : false
+      cloudtag_url        : /tags #This is where the link on tags would redirect
+      cloudcategory_url   : /categories #This is where the link on categories would redirect
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      header_type       : "post"
+      include_on_search : true
+      include_on_feed   : true
+      show_date         : true
+      show_bottomnavs   : true
+      show_sociallinks  : true
+      show_comments     : true
+      show_tags         : true
+      show_categories   : true
+      show_author       : true
+      show_breadcrumb   : true
+      breadcrumb_list   :
+        - label: Blog
+          url: /blog/
+  -
+    scope:
+      path: ""
+      type: "cheatsheet"
+    values:
+      header_type       : "hero"
+      show_bottomnavs   : true
+      show_sociallinks  : true
+      include_on_search : true
+      show_breadcrumb   : true
+      breadcrumb_list   :
+        - label: Cheatsheets
+          url: /cheatsheets
+
+
+# XX. Other settings - no need to modify
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  blanklines: true
+
+plugins:
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-sitemap
+
+
+# Exclude these files from production site
+exclude:
+  - LICENSE
+  - README.md
+  - Gemfile
+  - vendor
+
+include:
+ - _pages
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  footnote_backlink: '&uarr;'
+  entity_output: as_char
+  toc_levels: 2..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style

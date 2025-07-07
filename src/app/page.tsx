@@ -25,7 +25,7 @@ const siteInfo = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900">
       {/* Global blight atmosphere */}
       <div className="fixed inset-0 pointer-events-none opacity-20">
         <div className="absolute top-1/4 left-1/6 w-32 h-16 bg-purple-500/30 rounded-full blur-xl transform rotate-12"></div>
@@ -48,14 +48,14 @@ export default function HomePage() {
       </div>
 
       {/* Header */}
-      <header className="relative z-50 px-4 lg:px-6 h-16 flex items-center backdrop-blur-sm bg-black/30 border-b border-purple-500/30">
+      <header className="px-4 lg:px-6 h-16 flex items-center backdrop-blur-sm bg-black/30 border-b border-purple-500/30">
         <Link href="/" className="flex items-center space-x-3">
           <Image
             src="/PixelBlightNoBackground.png"
             alt="Pixel Blight Logo"
-            width={120}
             height={40}
-            className="h-10 w-auto drop-shadow-lg"
+            width={120}
+            className="h-10 drop-shadow-lg object-contain"
           />
         </Link>
         <nav className="ml-auto flex gap-6">
@@ -184,6 +184,7 @@ export default function HomePage() {
                 Featured
               </Badge>
 
+
               <CardHeader>
                 <CardTitle className="text-2xl text-white flex items-center justify-between drop-shadow-lg">
                   Phantom Bound
@@ -209,7 +210,7 @@ export default function HomePage() {
                   </div>
                   <Badge
                     variant="secondary"
-                    className="bg-green-600/30 text-green-400 border-green-600/40 shadow-sm"
+                    className="bg-green-600/30 text-green-400 border-green-600/40 shadow-sm ml-2"
                   >
                     Available Now
                   </Badge>

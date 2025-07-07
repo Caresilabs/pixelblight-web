@@ -25,7 +25,7 @@ const siteInfo = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 relative overflow-x-clip">
       {/* Global blight atmosphere */}
       <div className="fixed inset-0 pointer-events-none opacity-20">
         <div className="absolute top-1/4 left-1/6 w-32 h-16 bg-purple-500/30 rounded-full blur-xl transform rotate-12"></div>
@@ -373,7 +373,7 @@ export default function HomePage() {
       >
         {/* Footer blight atmosphere */}
         <div className="absolute top-0 left-1/3 w-48 h-24 bg-purple-500/20 rounded-full blur-xl transform rotate-12"></div>
-        <div className="absolute bottom-0 right-1/4 w-32 h-64 bg-yellow-500/15 rounded-full blur-2xl transform -rotate-30"></div>
+        <div className="absolute bottom-10 right-1/4 w-32 h-64 bg-yellow-500/15 rounded-full blur-2xl transform -rotate-30"></div>
 
         {/* Footer corruption */}
         <div className="absolute inset-0 opacity-30">
